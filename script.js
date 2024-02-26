@@ -22,17 +22,31 @@ function createSpreadSheet(containerEl, cellsArr) {
             cellEl.classList.add('cell');
             rowEl.appendChild(cellEl);
             row.push(cellEl);
-
+            
             if (r == 0 || c == 0) {
                 cellEl.classList.add('uneditable');
                 cellEl.disabled = true;
+
+                if (c > 0) {
+                    cellEl.value = String.fromCharCode('A'.charCodeAt() + c - 1);
+                }
+                if (r > 0) {
+                    cellEl.value = r;
+                }
+                continue;
             }
-            if (r == 0 && c > 0) {
-                cellEl.value = String.fromCharCode('A'.charCodeAt() + c - 1);
-            }
-            if (r > 0 && c == 0) {
-                cellEl.value = r;
-            }
+
+            cellEl.addEventListener('focusin', () => {
+                cellsArr[r][0].classList.add('selected');
+                cellsArr[0][c].classList.add('selected');
+                cellStatus.innerText = String.fromCharCode('A'.charCodeAt() + c - 1) + r;
+            });
+
+            cellEl.addEventListener('focusout', () => {
+                cellsArr[r][0].classList.remove('selected');
+                cellsArr[0][c].classList.remove('selected');
+                cellStatus.innerText = '';
+            });
 
         }
 
