@@ -1,11 +1,12 @@
 const size = 5;
 
 const spreadSheetContainerEl = document.getElementById("spreadsheet-container");
+const exportBtn = document.getElementById("export-btn");
+const cellStatus = document.getElementById("cell-status");
 const cells = [];
 
-console.log(cells);
-
 createSpreadSheet(spreadSheetContainerEl, cells);
+exportBtn.addEventListener('click', () => exportSpreadSheet(cells));
 
 function createSpreadSheet(containerEl, cellsArr) {
 
@@ -52,6 +53,31 @@ function createSpreadSheet(containerEl, cellsArr) {
 
         cellsArr.push(row);
 
+    }
+
+}
+
+function exportSpreadSheet(cellsArr) {
+
+    const csvData = cellsArr.map(
+        rows => rows.filter(cell => !cell.classList.contains('uneditable'))
+            .map(cell => cell.value)
+            .join(', '))
+        .filter(rows => rows.length > 0)
+        .join('\n');
+
+    console.log(csvData);
+
+    const blob = new Blob(["\ufeff" + csvData], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    if (link.download !== undefined) {
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", "새 스타일 시트");
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 
 }
