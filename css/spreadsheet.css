@@ -1,3 +1,33 @@
+#spreadsheet-container {
+    border: 1px solid rgb(233, 233, 233);
+    width: fit-content;
+}
+
+.uneditable {
+    background-color: rgb(241, 241, 241);
+    text-align: center;
+}
+
 .selected {
-    background-color: black;
+    background-color: rgb(170, 231, 255);
+    color: white;
+    font-weight: bold;
+}
+
+.spreadsheet-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.cell {
+    font-size: .75em;
+    width: 6em;
+    padding: .5rem .25rem .5rem .25rem;
+    border: 1px solid rgb(233, 233, 233);
+
+    transition: all .3s;
+}
+
+.cell:focus {
+    outline: none;
 }

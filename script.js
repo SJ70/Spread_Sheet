@@ -1,4 +1,4 @@
-const size = 5;
+const size = 26;
 
 const spreadSheetContainerEl = document.getElementById("spreadsheet-container");
 const exportBtn = document.getElementById("export-btn");
@@ -10,14 +10,14 @@ exportBtn.addEventListener('click', () => exportSpreadSheet(cells));
 
 function createSpreadSheet(containerEl, cellsArr) {
 
-    for (let r = 0; r < size; r++) {
+    for (let r = 0; r <= size; r++) {
 
         const rowEl = document.createElement('div');
         rowEl.classList.add('spreadsheet-row');
         containerEl.appendChild(rowEl);
         let row = [];
 
-        for (let c = 0; c < size; c++) {
+        for (let c = 0; c <= size; c++) {
 
             const cellEl = document.createElement('input');
             cellEl.classList.add('cell');
