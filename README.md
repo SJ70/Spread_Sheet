@@ -13,7 +13,7 @@
 
 ● 아래 링크 (그림 1)의 리소스 형상(manifest)이 올라간 결과물 레포 주소 (URL 제출)
 
-![img](https://lh4.googleusercontent.com/QEGbVCrNKZ_f937yLnQtjQ6U3J9IJkqdiKKzVqpBoPWZh05zFFTQQSHeaLEwNPM3uGTQmHt0jhCuC_-wQqSQX8R-qi0AjB8Eo3asgK6fRmd9hACNq1QhSBMJjKQ1Gi7YdU42Xt3jIKvXwDuAp3CdY7E)
+![img](./img/spread-sheet-ref.gif)
 
 ---
 ### 하위과제
