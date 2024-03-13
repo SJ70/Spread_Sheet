@@ -1,4 +1,4 @@
-> 👉 [배포 페이지 바로가기](https://sj70.github.io/Spread_Sheet/)
+> 👉 [배포 페이지 바로가기](https://sj70.github.io/spread_sheet/)
 
 # 04. 자바스크립트를 이용해서 Spread Sheet 앱 만들기
 
